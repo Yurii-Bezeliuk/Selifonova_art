@@ -3,58 +3,14 @@
 @use "_icons";
 @use "_colors" as *;
 
-// .btn--primary {
-//   @include typo("btn-txt");
-//   background-color: $primary-color;
-//   transition: all 0.3s;
-//   border: 1px solid red;
-//   html:not([data-fls-touch]) & {
-//     &:hover {
-//       background-color: $dark-text-color;
-//       color: $text-light;
-//     }
-//   }
-// }
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: toRem(150);
-  @include typo("btn-txt");
-  color: $text-main;
-  transition: all 0.3s;
-  border-radius: toRem(24);
-  background-color: $text-light;
+.title {
+  margin: 0 auto;
   text-align: center;
-  html:not([data-fls-touch]) & {
-    &:hover {
-      background-color: $color-primary;
-      color: $text-light;
-    }
-  }
-  &--blue {
-    background-color: $color-primary;
-    color: #fff;
-    html:not([data-fls-touch]) & {
-      &:hover {
-        background-color: $text-light;
-        color: $bg-dark;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
-  @media (width<=toEm(360)) {
-    padding: toRem(10) toRem(25);
-  }
+  color: $color;
+  @include typo("h2");
 }
-
-.rating {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: toRem(6);
-  &__item {
-    font-size: toRem(13);
-  }
+.subtitle {
+  color: $hover-color;
+  text-transform: uppercase;
+  @include typo("sub");
 }

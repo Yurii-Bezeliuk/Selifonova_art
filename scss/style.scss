@@ -3,7 +3,7 @@
 @use "_icons";
 @use "_mixins" as *;
 @use "_typo" as *;
-@use "_header";
+@use "_header.scss";
 @use "_pages";
 @use "_components.scss" as *;
 @use "_footer";
@@ -21,23 +21,24 @@
 }
 
 [class*="__container"] {
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
   padding-inline: toRem(15);
 }
 
-@media (width >= 587) {
-  [class*="__container--width"] {
-    max-width: 1099px;
-    margin: 0 auto;
-    padding-right: toRem(5);
-    padding-left: toRem(-25);
-  }
-}
-
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
 }
 
 /* @import url('font.css'); */
+
+.pages {
+  > [class*="--border-top"] {
+    border-top: 1px solid $border-color;
+  }
+  > [class*="--padding"] {
+    @include adaptiveValue("padding-block", 80, 30);
+  }
+}

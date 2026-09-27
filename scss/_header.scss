@@ -4,59 +4,85 @@
 @use "_colors" as *;
 
 .header {
-  background-color: $light-bg;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
   &--scroll {
     .header__container {
       transition: all 0.3s;
       min-height: 69px;
     }
   }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+  }
+  // .header__container
   &__container {
-    // transition: all 0.2s;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    @include adaptiveValue("min-height", 96, 70, 0, 1050, 768);
-    @include adaptiveValue("gap", 189, 44, 0, 1050, 700);
-    @media (width < toEm(700)) {
-      justify-content: space-between;
-      gap: toRem(15);
-    }
+    gap: toRem(30);
+    min-height: toRem(80);
+    height: 100%;
   }
 
   // .header__logo
 
   &__logo {
-    position: relative;
-    z-index: 3;
   }
 
-  // .header__menu
+  // .header__nav
 
-  &__menu {
-    @media (width < toEm(700)) {
+  &__nav {
+  }
+
+  // .header__action
+
+  &__action {
+  }
+}
+.logo {
+  // .logo__link
+  z-index: 2;
+
+  &__link {
+    @include typo("h6");
+  }
+}
+
+.nav-header {
+  // .nav-header__list
+
+  &__list {
+    @media (width<=toEm(720)) {
       position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
       left: 100%;
-      background-color: $light-text-color;
-      padding: toRem(100) toRem(15) toRem(30) toRem(15);
+      padding: toRem(100) toRem(30) toRem(30) toRem(15);
+      background-color: $bg-card;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      row-gap: toRem(40);
       overflow: auto;
       transition: left 0.3s;
+
       &::before {
         content: "";
         position: fixed;
         width: 100%;
-        height: toRem(70);
-        background-color: $light-bg;
+        height: toRem(80);
+        background-color: $bg-color;
         top: 0;
         left: 100%;
         transition: left 0.3s;
+        // left: 100%;
       }
       [data-menu-open] & {
         left: 0;
@@ -65,64 +91,41 @@
         }
       }
     }
-  }
-}
-.logo-header {
-  display: flex;
-  align-items: center;
-  gap: toRem(10);
-  .logo-header--icon-logo {
-    color: $logo-color;
-    font-size: 40px;
-  }
-  &__text {
-    @include typo("h5");
-    display: none;
-    @media (width > toEm(360)) {
-      display: block;
+    @media (width >=toEm(720)) {
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: center;
+      // align-items: center;
+      @include adaptiveValue("column-gap", 40, 10);
+      row-gap: toRem(5);
     }
   }
 }
+.list-nav {
+  // .list-nav__item
 
-.menu-header {
-  flex-grow: 1;
-
-  &__list {
+  &__item {
+    text-transform: uppercase;
     position: relative;
-    z-index: 3;
-    display: flex;
-    flex-wrap: wrap;
-    @include adaptiveValue("gap", 64, 10, 0);
-    color: #737373;
-    @include typo("h6-nav");
-    color: $grey-text-color;
-    letter-spacing: 0.2px;
-    @media (width < toEm(700)) {
-      flex-direction: column;
-      color: $dark-bg;
-      row-gap: toRem(25);
-      font-size: toRem(22);
-      font-weight: 700;
-    }
-    text-align: end;
-  }
-
-  &__link {
-    position: relative;
+    @include typo("h6");
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.5s ease;
     &::after {
       content: "";
       position: absolute;
-      width: 0;
-      top: 100%;
+      bottom: toRem(-5);
       left: 50%;
       translate: -50%;
+      width: 0;
       height: toRem(2);
-      transition: width 0.3s;
-      background-color: $grey-text-color;
+      background-color: $hover-color;
+      transition: all 0.5s ease;
     }
+
     html:not([data-fls-touch]) & {
       &:hover {
-        color: $bg-dark;
+        color: $hover-dark;
         &::after {
           width: 100%;
         }
@@ -130,78 +133,64 @@
     }
   }
 }
-
-.header {
-  // .header__action-btn
-
-  &__action-btn {
-    z-index: 3;
-    padding: toRem(6) toRem(24) toRem(6) toRem(24);
-    background-color: $light-text-color;
-    border-radius: toRem(25) toRem(25) toRem(25) toRem(25);
-    color: #252b42;
-    @include typo("btn-txt");
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: toRem(20);
+  @media (width<=toEm(450)) {
+    @include adaptiveValue("gap", 20, 15);
+  }
+  &__link {
+    z-index: 2;
+    @include typo("h6");
+    padding: toRem(12) toRem(21);
+    border: toRem(1) solid $color;
+    border-radius: toRem(9999);
+    text-transform: uppercase;
     transition: all 0.4s;
+    @media (width<=toEm(450)) {
+      display: none;
+      // padding: toRem(12) toRem(15);
+    }
     html:not([data-fls-touch]) & {
       &:hover {
-        background-color: $logo-color;
-        color: #fff;
+        &:hover {
+          background-color: $color;
+          color: $hover-light;
+        }
       }
     }
   }
 
-  // .header__action-menu
-}
-.menu-action {
-  display: none;
-  position: relative;
-  width: toRem(30);
-  position: relative;
-  height: toRem(18);
-  span,
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: toRem(2);
-    transition: all 0.3s;
-    background-color: black;
-  }
-  &::before {
-    top: 0;
-  }
-  &::after {
-    bottom: 0;
-  }
-  span {
-    translate: 0 -50%;
-  }
-  @media (width < toEm(700)) {
-    display: block;
+  // .header-btn__mobile
 
-    [data-menu-open] & {
+  &__mobile {
+    @media (width<=toEm(720)) {
+      width: toRem(30);
+      height: toRem(18);
+      position: relative;
+      &::after,
+      &::before,
       span {
-        left: 100%;
-        width: 0;
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: toRem(2);
+        background-color: $color;
       }
       &::before {
-        rotate: -45deg;
+        top: 0;
+      }
+      span {
         top: 50%;
         translate: 0 -50%;
       }
       &::after {
-        rotate: 45deg;
-        bottom: 50%;
-        translate: 0 50%;
+        bottom: 0;
       }
     }
   }
-}
-.header__action {
-  display: flex;
-  align-items: center;
-  column-gap: 15px;
 }
