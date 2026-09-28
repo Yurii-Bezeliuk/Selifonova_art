@@ -27,6 +27,7 @@
 
   &__info {
     @include typo("small");
+    text-align: right;
   }
 }
 .logo-footer {

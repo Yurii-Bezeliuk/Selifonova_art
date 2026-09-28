@@ -5,10 +5,17 @@
 @use "_components.scss" as *;
 
 main {
-  // padding-top: toRem(80);
-  padding-top: toRem(80);
-  @media (width<=toEm(992)) {
-    padding-top: 0;
+  // padding-top: toRem(0);
+  // margin-top: toRem(80);
+
+  @media (toEm(300)<=width<=toRem(600)) {
+    @include adaptiveValue("margin-top", 50, 40);
+  }
+  @media (toEm(600)<=width<=toRem(992)) {
+    @include adaptiveValue("margin-top", 40, 0);
+  }
+  @media (width>toEm(992)) {
+    @include adaptiveValue("margin-top", 80, 40);
   }
 }
 
@@ -24,6 +31,7 @@ main {
     @include adaptiveValue("padding-bottom", 129, 30);
     display: flex;
     @include adaptiveValue("gap", 32, 15);
+
     @media (width<=toEm(991)) {
       flex-direction: column;
     }
@@ -190,7 +198,7 @@ main {
   margin: 0 auto;
   flex-shrink: 0;
 
-  @media (width<=toEm(992)) {
+  @media (width<toEm(992)) {
     &:not(:last-child) {
       margin-bottom: toRem(35);
     }
@@ -198,17 +206,17 @@ main {
 
   &__wraper {
     position: relative;
-    @media (width>=toEm(992)) {
+    @media (width>toEm(992)) {
       &::before {
         content: "";
         position: absolute;
         inset: 0;
         background-color: $bg-img;
-        border-radius: 16px;
+        border-radius: toRem(16);
         transform: rotate(-2deg) scale(1.02);
         translate: toRem(20) toRem(-15);
         border: toRem(1) solid $border-img;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 toRem(10) toRem(25) rgba(0, 0, 0, 0.06);
         z-index: 1;
       }
     }
@@ -222,10 +230,9 @@ main {
     background-color: $bg-card;
     max-width: toRem(500);
     margin: 0 auto;
-    // rotate: 1deg;
     transition: all 0.3s;
-    border-radius: 16px;
-    @media (width>=toEm(992)) {
+    border-radius: toRem(16);
+    @media (width>toEm(992)) {
       position: relative;
       z-index: 2;
       rotate: 1deg;
@@ -348,10 +355,14 @@ main {
     }
   }
 }
+
 .icv__label {
   @include typo("small");
   padding: toRem(6) toRem(12);
   border-radius: toRem(9999);
+  @media (width<=toEm(560)) {
+    display: none;
+  }
 }
 .icv__label-after {
   background-color: $color-bgbefore;

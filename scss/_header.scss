@@ -8,6 +8,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  background-color: $bg-color;
+  z-index: 20;
+
   &--scroll {
     .header__container {
       transition: all 0.3s;
@@ -25,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: toRem(30);
+    @include adaptiveValue("gap", 30, 13);
     min-height: toRem(80);
     height: 100%;
   }
@@ -58,7 +61,7 @@
   // .nav-header__list
 
   &__list {
-    @media (width<=toEm(720)) {
+    @media (width<=toEm(740)) {
       position: fixed;
       width: 100%;
       height: 100%;
@@ -69,7 +72,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      row-gap: toRem(40);
+      row-gap: 40;
       overflow: auto;
       transition: left 0.3s;
 
@@ -91,11 +94,11 @@
         }
       }
     }
-    @media (width >=toEm(720)) {
+    @media (width >=toEm(740)) {
       display: flex;
       flex-wrap: wrap;
-      // justify-content: center;
-      // align-items: center;
+      justify-content: center;
+      align-items: center;
       @include adaptiveValue("column-gap", 40, 10);
       row-gap: toRem(5);
     }
@@ -103,8 +106,9 @@
 }
 .list-nav {
   // .list-nav__item
-
   &__item {
+  }
+  &__link {
     text-transform: uppercase;
     position: relative;
     @include typo("h6");
@@ -138,7 +142,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  gap: toRem(20);
+  @include adaptiveValue("gap", 20, 10);
   @media (width<=toEm(450)) {
     @include adaptiveValue("gap", 20, 15);
   }
@@ -167,7 +171,9 @@
   // .header-btn__mobile
 
   &__mobile {
-    @media (width<=toEm(720)) {
+    display: none;
+    @media (width<=toEm(740)) {
+      display: block;
       width: toRem(30);
       height: toRem(18);
       position: relative;
