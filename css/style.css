@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -139,11 +140,6 @@ input[type=radio] {
   background-color: #f8f7f5;
   z-index: 20;
 }
-.header--scroll .header__container {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  min-height: 69px;
-}
 .header::after {
   content: "";
   position: absolute;
@@ -208,7 +204,7 @@ input[type=radio] {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    row-gap: 40;
+    row-gap: 2.5rem;
     overflow: auto;
     -webkit-transition: left 0.3s;
     transition: left 0.3s;
@@ -297,6 +293,11 @@ html:not([data-fls-touch]) .list-nav__link:hover {
 }
 html:not([data-fls-touch]) .list-nav__link:hover::after {
   width: 100%;
+}
+@media (width <= 46.25em) {
+  .list-nav__link {
+    font-size: 1.5625rem;
+  }
 }
 
 .header-btn {
@@ -931,6 +932,20 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
 .icv__label-before {
   background-color: rgba(255, 255, 255, 0.9019607843);
   color: #151413;
+}
+
+#image-compare,
+#image-compare * {
+  -ms-touch-action: none;
+      touch-action: none; /* Забороняє iOS скролити сторінку під час руху бігунка */
+  -webkit-tap-highlight-color: transparent;
+}
+
+image-compare__image,
+.image-compare__handle {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform, clip-path, width;
 }
 
 .footer {

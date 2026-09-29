@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       startingPoint: 50,
-      smoothing: true,
       smoothingAmount: 80,
     });
 

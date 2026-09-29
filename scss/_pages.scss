@@ -372,3 +372,13 @@ main {
   background-color: $color-bgafter;
   color: $color;
 }
+#image-compare,
+#image-compare * {
+  touch-action: none; /* Забороняє iOS скролити сторінку під час руху бігунка */
+  -webkit-tap-highlight-color: transparent;
+}
+image-compare__image,
+.image-compare__handle {
+  transform: translateZ(0);
+  will-change: transform, clip-path, width;
+}
