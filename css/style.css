@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -937,11 +936,11 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
 #image-compare,
 #image-compare * {
   -ms-touch-action: none;
-      touch-action: none; /* Забороняє iOS скролити сторінку під час руху бігунка */
+      touch-action: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-image-compare__image,
+.image-compare__image,
 .image-compare__handle {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
