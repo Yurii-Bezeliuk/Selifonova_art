@@ -31,6 +31,11 @@ main {
   }
   &__avtor {
   }
+  &__advantages {
+  }
+
+  &__stages {
+  }
 }
 .hero {
   // .hero__container
@@ -670,5 +675,169 @@ main {
       @include typo("h6");
       font-weight: 400;
     }
+  }
+}
+
+// ----------------------------
+.advantages {
+  // .advantages__container
+  background-color: $color-darksection;
+
+  &__container {
+    text-align: center;
+  }
+
+  // .advantages__subtitle
+
+  &__subtitle {
+    :not(:last-child) {
+      margin-bottom: toRem(11);
+    }
+  }
+
+  // .advantages__title
+
+  &__title {
+    &:not(:last-child) {
+      // margin-bottom: toRem(64);
+      @include adaptiveValue("margin-bottom", 64, 30);
+    }
+  }
+
+  // .advantages__list
+
+  &__list {
+  }
+}
+
+.advantages-items {
+  // .advantages-items__item
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(toRem(300), toRem(384)), 1fr)
+  );
+  @include adaptiveValue("column-gap", 32, 10);
+  row-gap: toRem(20);
+
+  &__item {
+    background-color: $bg-card;
+    border-radius: toRem(16);
+    border: toRem(1) solid $border-img;
+    // padding: toRem(33);
+    @include adaptiveValue("padding", 33, 20);
+    text-align: left;
+  }
+
+  // .advantages-items__img
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 24, 15);
+    }
+    width: toRem(48);
+    height: toRem(48);
+    border-radius: 50%;
+    background-color: $bg-color;
+    border: toRem(1) solid $color-border-2;
+    img {
+      width: toRem(18);
+      aspect-ratio: 1;
+    }
+  }
+
+  // .advantages-items__title
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(14);
+    }
+    @include typo("h3");
+    // font-weight: 400;
+    color: $color;
+  }
+
+  // .advantages-items__text
+
+  &__text {
+    @include typo("p");
+    color: $text-color--2;
+  }
+}
+// --------------------------
+
+.stages {
+  // .stages__container
+
+  &__container {
+    text-align: center;
+  }
+
+  // .stages__subtitle
+
+  &__subtitle {
+    &:not(:last-child) {
+      margin-bottom: toRem(11);
+    }
+  }
+
+  // .stages__title
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 64, 30);
+    }
+  }
+
+  // .stages__items
+
+  &__items {
+  }
+}
+
+.items-stages {
+  display: grid;
+  @include adaptiveValue("gap", 24, 7);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(toRem(170), toRem(224)), 1fr)
+  );
+  text-align: left;
+
+  &__item {
+    padding: toRem(25);
+    border-radius: toRem(16);
+    background-color: $bg-card;
+    border: toRem(1) solid $border-img;
+    :not(:last-child) {
+      margin-bottom: toRem(7);
+    }
+  }
+
+  // .items-stages__num
+
+  &__num {
+    font-size: toRem(36);
+    font-weight: 300;
+    line-height: 1.111;
+    font-family: "Cormorant Garamond", serif;
+    color: $hover-color;
+  }
+
+  // .items-stages__title
+
+  &__title {
+    @include typo("h4");
+    color: $color;
+  }
+
+  // .items-stages__text
+
+  &__text {
+    @include typo("p");
+    color: $text-color--2;
   }
 }
