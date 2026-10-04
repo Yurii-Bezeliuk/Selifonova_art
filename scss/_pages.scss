@@ -767,6 +767,146 @@ main {
     color: $text-color--2;
   }
 }
+// ---------------------------------------------------
+.important {
+  // .important__container
+
+  &__container {
+    text-align: center;
+  }
+
+  // .important__subtitle
+
+  &__subtitle {
+    &:not(:last-child) {
+      margin-bottom: toRem(11);
+    }
+  }
+
+  // .important__title
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(18);
+    }
+  }
+
+  // .important__text
+
+  &__text {
+    @include typo("p");
+    color: $text-color--2;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 66, 20);
+    }
+  }
+
+  // .important__example
+
+  &__example {
+  }
+}
+
+.example-important {
+  display: flex;
+  @include adaptiveValue("gap", 32, 15);
+  justify-content: center;
+  text-align: left;
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 40, 15);
+  }
+  @media (width<=toEm(768)) {
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    border-radius: toRem(16);
+    padding: toRem(27);
+    background-color: $bg-card;
+  }
+}
+.item-example {
+  // .item-example__title
+  > :not(:last-child) {
+    margin-bottom: toRem(16);
+  }
+  &--good {
+    border: toRem(2) solid $good-color;
+  }
+  &--bad {
+    border: toRem(2) solid $bad-color;
+  }
+  &__title {
+    border-radius: toRem(9999);
+    padding: toRem(4) toRem(12);
+    display: flex;
+    align-items: center;
+    gap: toRem(7);
+    @include typo("p");
+    &--good {
+      background-color: $good-color;
+      color: #166534;
+    }
+    &--bad {
+      background-color: $bad-color;
+      color: #991b1b;
+    }
+  }
+
+  // .item-example__img
+
+  &__img {
+    max-width: toRem(380);
+    width: 100%;
+    aspect-ratio: 380/285;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .item-example__list
+
+  &__list {
+    :not(:last-child) {
+      margin-bottom: toRem(8);
+    }
+  }
+
+  // .item-example__unit
+
+  &__unit {
+    display: flex;
+    align-items: self-start;
+    gap: toRem(7);
+    @include typo("p");
+    &--icon-done {
+      &::before {
+        color: #166534;
+        width: toRem(14);
+        aspect-ratio: 1;
+        padding-top: toRem(5);
+      }
+    }
+    &--icon-bad {
+      &::before {
+        color: #991b1b;
+        width: toRem(14);
+        aspect-ratio: 1;
+        padding-top: toRem(5);
+      }
+    }
+  }
+  &__note {
+    @include typo("p");
+    color: $text-color--2;
+  }
+}
+
 // --------------------------
 
 .stages {

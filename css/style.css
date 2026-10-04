@@ -1541,7 +1541,178 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
   font-size: 1rem;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.5;
+  color: #4d4b45;
+}
+
+.important__container {
+  text-align: center;
+}
+.important__subtitle:not(:last-child) {
+  margin-bottom: 0.6875rem;
+}
+.important__title:not(:last-child) {
+  margin-bottom: 1.125rem;
+}
+.important__text {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4d4b45;
+}
+@media (min-width: 81.875em) {
+  .important__text:not(:last-child) {
+    margin-bottom: 66px;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.875em) {
+  .important__text:not(:last-child) {
+    margin-bottom: clamp( 20px , 5.1313131313px  +  4.6464646465vw , 66px );
+  }
+}
+@media (max-width: 20em) {
+  .important__text:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.example-important {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 81.875em) {
+  .example-important {
+    gap: 32px;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.875em) {
+  .example-important {
+    gap: clamp( 15px , 9.5050505051px  +  1.7171717172vw , 32px );
+  }
+}
+@media (max-width: 20em) {
+  .example-important {
+    gap: 15px;
+  }
+}
+.example-important {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+}
+@media (min-width: 81.875em) {
+  .example-important:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.875em) {
+  .example-important:not(:last-child) {
+    margin-bottom: clamp( 15px , 6.9191919192px  +  2.5252525253vw , 40px );
+  }
+}
+@media (max-width: 20em) {
+  .example-important:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+@media (width <= 48em) {
+  .example-important {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.example-important__item {
+  border-radius: 1rem;
+  padding: 1.6875rem;
+  background-color: #ffffff;
+}
+
+.item-example > :not(:last-child) {
+  margin-bottom: 1rem;
+}
+.item-example--good {
+  border: 0.125rem solid #bbf7d0;
+}
+.item-example--bad {
+  border: 0.125rem solid #fecaca;
+}
+.item-example__title {
+  border-radius: 624.9375rem;
+  padding: 0.25rem 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4375rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.item-example__title--good {
+  background-color: #bbf7d0;
+  color: #166534;
+}
+.item-example__title--bad {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+.item-example__img {
+  max-width: 23.75rem;
+  width: 100%;
+  aspect-ratio: 380/285;
+}
+.item-example__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.item-example__list :not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.item-example__unit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: self-start;
+      -ms-flex-align: self-start;
+          align-items: self-start;
+  gap: 0.4375rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.item-example__unit--icon-done::before {
+  color: #166534;
+  width: 0.875rem;
+  aspect-ratio: 1;
+  padding-top: 0.3125rem;
+}
+.item-example__unit--icon-bad::before {
+  color: #991b1b;
+  width: 0.875rem;
+  aspect-ratio: 1;
+  padding-top: 0.3125rem;
+}
+.item-example__note {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
   color: #4d4b45;
 }
 
@@ -1615,7 +1786,7 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
   font-size: 1rem;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.5;
   color: #4d4b45;
 }
 
