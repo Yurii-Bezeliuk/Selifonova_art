@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hoverStart: false,
       showLabels: true,
       smoothing: false,
+      fluid: true,
       labelOptions: {
         before: "ВИХІДНЕ ФОТО",
         after: "ГОТОВИЙ ПОРТРЕТ (ОЛІВЕЦЬ)",
@@ -76,21 +77,75 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// const card = document.querySelector(".hero__media");
+// const mainContent = document.querySelector(".body-hero__text");
+// const originalParent = document.querySelector(".body-hero");
+
+// function handleResize() {
+//   if (window.innerWidth <= 992) {
+//     // Якщо екран менше 991px — переміщуємо картку всередину текстового блоку
+//     mainContent.after(card);
+//   } else {
+//     // Повертаємо картку назад на десктопі
+//     originalParent.after(card);
+//   }
+// }
+
+// // Слухаємо зміну розміру екрана
+// window.addEventListener("resize", handleResize);
+// // Викликаємо одразу при завантаженні
+// handleResize();
+
 const card = document.querySelector(".hero__media");
 const mainContent = document.querySelector(".body-hero__text");
 const originalParent = document.querySelector(".body-hero");
 
-function handleResize() {
-  if (window.innerWidth <= 992) {
-    // Якщо екран менше 991px — переміщуємо картку всередину текстового блоку
+const avtorCard = document.querySelector(".avtor__picture");
+const avtorContent = document.querySelector(".info-avtor__title");
+const avtorParent = document.querySelector(".avtor__info");
+// Створюємо медіа-запит для екранів <= 991.98px
+const mediaQuery = window.matchMedia("(max-width: 991.98px)");
+
+function handleMediaChange(e) {
+  // Перевірка на існування елементів у DOM
+  if (!card || !mainContent || !originalParent) return;
+
+  if (e.matches) {
+    // Екран <= 991.98px: переміщуємо картку після текстового блоку
     mainContent.after(card);
   } else {
-    // Повертаємо картку назад на десктопі
+    // Десктоп: повертаємо картку назад
     originalParent.after(card);
   }
 }
 
-// Слухаємо зміну розміру екрана
-window.addEventListener("resize", handleResize);
-// Викликаємо одразу при завантаженні
-handleResize();
+// Запускаємо слухач події перетину брейкпоінту
+mediaQuery.addEventListener("change", handleMediaChange);
+
+// Первинний виклик при завантаженні сторінки
+handleMediaChange(mediaQuery);
+
+function InitSwiper() {
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    // initialSlide: 1,
+    spaceBetween: 10,
+    slidesPerView: "4",
+    freeMode: false,
+    watchSlidesProgress: true,
+    // slideToClickedSlide: true,
+    centeredSlides: true,
+  });
+  const swiper2 = new Swiper(".mySwiper2", {
+    loop: true,
+    // initialSlide: 1,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+}
+InitSwiper();

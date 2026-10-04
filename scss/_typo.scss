@@ -7,7 +7,7 @@
     line-height: 1;
     font-family: "Cormorant Garamond", serif;
   } @else if $type == "h2" {
-    @include adaptiveValue("font-size", 48, 28);
+    @include adaptiveValue("font-size", 48, 38);
     font-weight: 400;
     line-height: 1;
     font-family: "Cormorant Garamond", serif;
