@@ -1844,7 +1844,7 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
   }
 }
 .cost__cards {
-  grid-template-columns: repeat(auto-fit, minmax(min(21.875rem, 24rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(18.75rem, 24rem), 1fr));
   text-align: left;
 }
 .cost__card {

@@ -1034,7 +1034,7 @@ main {
 
     grid-template-columns: repeat(
       auto-fit,
-      minmax(min(toRem(350), toRem(384)), 1fr)
+      minmax(min(toRem(300), toRem(384)), 1fr)
     );
 
     text-align: left;
