@@ -26,9 +26,9 @@
                <div class="header__logo logo"><a href="#" class="logo__link">SELIFONOVA_ART</a></div>
                <nav class="header__nav nav-header">
                   <ul class="nav-header__list list-nav">
-                     <li class="list-nav__item"><a class="list-nav__link" href="#">Про мене</a></li>
-                     <li class="list-nav__item"><a class="list-nav__link" href="#">Галерея</a></li>
-                     <li class="list-nav__item"><a class="list-nav__link" href="#">Ціни</a></li>
+                     <li class="list-nav__item"><a class="list-nav__link" href="#about-me">Про мене</a></li>
+                     <li class="list-nav__item"><a class="list-nav__link" href="#gallery">Галерея</a></li>
+                     <li class="list-nav__item"><a class="list-nav__link" href="#prise">Ціни</a></li>
                      <li class="list-nav__item"><a class="list-nav__link" href="#">FAQ</a></li>
                   </ul>
                </nav>
@@ -107,8 +107,6 @@
 
                         <img src="img/comparsion/2.webp" alt="Вихідне фото" />
 
-                        <!-- Готовий малюнок -->
-
                         <img src="img/comparsion/1.webp" alt="Готовий портрет" />
 
                      </div>
@@ -117,7 +115,7 @@
                </div>
             </section>
 
-            <section class="pages__gallery gallery gallery--padding gallery--border-top">
+            <section id="gallery" class="pages__gallery gallery gallery--padding gallery--border-top">
                <div class="gallery__container">
                   <div class="gallery__subtitle subtitle">Портфоліо</div>
                   <h2 class="gallery__title title">Галерея робіт</h2>
@@ -164,7 +162,7 @@
 
                </section>
 
-               <section class="pages__avtor avtor avtor--border-top">
+               <section id="about-me" class="pages__avtor avtor avtor--border-top">
                   <div class="avtor__container">
                      <div class="avtor__picture picture-avtor">
                         <div class="picture-avtor__img">
@@ -374,6 +372,90 @@
                            </div>
                         </article>
 
+                     </div>
+                  </div>
+               </section>
+
+               <section id="prise" class="pages__cost cost cost--padding cost--border-top">
+                  <div class="cost__container">
+                     <div class="cost__subtitle subtitle">Вартість</div>
+                     <h2 class="cost__title title">Формати та ціни</h2>
+                     <div class="cost__text">
+                        <p>У вартість кожного портрета вже входить преміум-папір, фіксація лаком та подарункове
+                           пакування.</p>
+                     </div>
+
+                     <div class="cost__cards">
+                        <article class="cost__card item-card">
+                           <div class="item-card__info">
+                              <div class="item-card__subtitle">Камерний розмір</div>
+                              <h3 class="item-card__title">Формат A4</h3>
+                              <div class="item-card__size">21 × 30 см</div>
+
+                           </div>
+                           <div class="item-card__cost">
+                              <div class="item-card__price">1 500 грн <span class="item-card__person"> 1 особа</span></div>
+                              <div class="item-card__price">2 500 грн <span class="item-card__person"> 2 особи</span></div>
+                           </div>
+
+                           <div class="item-card__units">
+                              <ul class="item-card__list list-card">
+                                 <li class="list-card__item list-card__item--icon-done">Ідеально для лицьового портрета</li>
+                                 <li class="list-card__item list-card__item--icon-done">Термін виготовлення: 2–4 дні</li>
+                                 <li class="list-card__item list-card__item--icon-done">Безкислотний папір 300г/м²</li>
+                                 <li class="list-card__item list-card__item--icon-done">Подарункова упаковка </li>
+                              </ul>
+                           </div>
+                           <a href="#" class="item-card__btn">Замовити</a>
+                        </article>
+
+                        <article class="cost__card item-card  item-card--the-best">
+                           <div class="item-card__the-best">ХІТ ПРОДАЖІВ</div>
+                           <div class="item-card__info">
+                              <div class="item-card__subtitle item-card__subtitle--the-best">Золотий стандарт</div>
+                              <h3 class="item-card__title">Формат A3</h3>
+                              <div class="item-card__size">30 × 42 см</div>
+
+                           </div>
+                           <div class="item-card__cost">
+                              <div class="item-card__price">3 000 грн <span class="item-card__person"> 1 особа</span></div>
+                              <div class="item-card__price">4 500 грн <span class="item-card__person"> 2 особи</span></div>
+                           </div>
+
+                           <div class="item-card__units">
+                              <ul class="item-card__list list-card">
+                                 <li class="list-card__item list-card__item--icon-done">Глибока деталізація риса обличчя</li>
+                                 <li class="list-card__item list-card__item--icon-done">Термін виготовлення: 4–7 днів</li>
+                                 <li class="list-card__item list-card__item--icon-done">Підходить для парних портретів</li>
+                                 <li class="list-card__item list-card__item--icon-done">Подарункова упаковка + фіксаж</li>
+                              </ul>
+                           </div>
+                           <a href="#" class="item-card__btn item-card__btn--the-best">Замовити</a>
+                        </article>
+
+                        <article class="cost__card item-card">
+                           <div class="item-card__info">
+                              <div class="item-card__subtitle">Преміум масштаб</div>
+                              <h3 class="item-card__title">Формат A2</h3>
+                              <div class="item-card__size">42 × 60 см</div>
+
+                           </div>
+                           <div class="item-card__cost">
+                              <div class="item-card__price">4 200 грн <span class="item-card__person"> 1 особа</span></div>
+                              <div class="item-card__price">5 200 грн <span class="item-card__person"> 2 особи</span></div>
+                           </div>
+
+                           <div class="item-card__units">
+                              <ul class="item-card__list list-card">
+                                 <li class="list-card__item list-card__item--icon-done">Монументальний вигляд
+                                 </li>
+                                 <li class="list-card__item list-card__item--icon-done">Термін виготовлення: 7–12 днів</li>
+                                 <li class="list-card__item list-card__item--icon-done">Максимальна точність складних </li>
+                                 <li class="list-card__item list-card__item--icon-done">Безпечний поштовий тубус</li>
+                              </ul>
+                           </div>
+                           <a href="#" class="item-card__btn">Замовити</a>
+                        </article>
                      </div>
                   </div>
                </section>

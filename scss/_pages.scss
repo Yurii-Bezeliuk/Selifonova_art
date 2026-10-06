@@ -8,6 +8,7 @@ html,
 body {
   overflow-y: auto !important;
   overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -30,11 +31,17 @@ main {
   &__hero {
   }
   &__avtor {
+    scroll-margin-top: toRem(150);
   }
   &__advantages {
   }
-
+  &__gallery {
+    scroll-margin-top: toRem(50);
+  }
   &__stages {
+  }
+  &__cost {
+    scroll-margin-top: toRem(100);
   }
 }
 .hero {
@@ -911,6 +918,7 @@ main {
 
 .stages {
   // .stages__container
+  background-color: $color-darksection;
 
   &__container {
     text-align: center;
@@ -979,5 +987,193 @@ main {
   &__text {
     @include typo("p");
     color: $text-color--2;
+  }
+}
+
+// --------------------------------------------------------
+
+.cost {
+  // .cost__container
+
+  scroll-margin-top: 80px;
+
+  &__container {
+    text-align: center;
+  }
+
+  // .cost__subtitle
+
+  &__subtitle {
+    &:not(:last-child) {
+      margin-bottom: toRem(11);
+    }
+  }
+
+  // .cost__title
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(18);
+    }
+  }
+
+  // .cost__text
+
+  &__text {
+    @include typo("p");
+    &:not(:last-child) {
+      margin-bottom: toRem(58);
+    }
+  }
+
+  // .cost__cards
+
+  &__cards {
+    display: grid;
+    @include adaptiveValue("gap", 32, 10);
+
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(toRem(350), toRem(384)), 1fr)
+    );
+
+    text-align: left;
+  }
+
+  // .cost__card
+
+  &__card {
+    background-color: $bg-card;
+    border-radius: toRem(16);
+    border: toRem(1) solid $border-img;
+    @include adaptiveValue("padding-bottom", 33, 20);
+    @include adaptiveValue("padding-top", 39, 26);
+    @include adaptiveValue("padding-inline", 33, 20);
+  }
+}
+.item-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &--the-best {
+    border: toRem(2) solid $color;
+  }
+  &__the-best {
+    position: absolute;
+    @include typo("sub");
+    top: 0;
+    left: 50%;
+    translate: -50% -50%;
+    padding: toRem(5) toRem(16);
+    background-color: $color;
+    border-radius: toRem(9999);
+    color: $bg-color;
+    text-transform: uppercase;
+  }
+  // .item-card__subtitle
+  :not(:last-child) {
+    margin-bottom: toRem(24);
+  }
+
+  &__subtitle {
+    color: $text-color--2;
+    text-transform: uppercase;
+    @include typo("sub");
+    &:not(:last-child) {
+      margin-bottom: toRem(7);
+    }
+    &--the-best {
+      color: $hover-color;
+    }
+  }
+
+  // .item-card__title
+  &__cost {
+    border-top: toRem(1) solid $border-img;
+    padding: toRem(10) 0;
+    border-bottom: toRem(1) solid $border-img;
+  }
+  &__title {
+    @include typo("accent");
+
+    &:not(:last-child) {
+      margin-bottom: toRem(4);
+    }
+  }
+
+  // .item-card__size
+
+  &__size {
+  }
+
+  // .item-card__price
+
+  &__price {
+    color: $color;
+    font-size: toRem(36);
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    line-height: 1.11;
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  // .item-card__person
+
+  &__person {
+    @include typo("p");
+    &::before {
+      content: "/";
+      padding: 0 toRem(4);
+    }
+  }
+
+  // .item-card__list
+
+  &__list {
+    @include typo("p");
+    color: $text-color;
+    :not(:last-child) {
+      margin-bottom: toRem(12);
+    }
+  }
+
+  &__units {
+    &:not(:last-child) {
+      margin-bottom: toRem(52);
+    }
+  }
+  // .item-card__btn
+
+  &__btn {
+    @include typo("p");
+    width: 100%;
+    text-align: center;
+    border: toRem(1) solid $color;
+    border-radius: toRem(9999);
+    padding: toRem(15) 0;
+    transition: all 0.4s;
+    margin-top: auto;
+
+    html:not([data-fls-touch]) & {
+      &:hover {
+        background-color: $hover-dark;
+        color: #fff;
+      }
+    }
+    &--the-best {
+      background-color: $color;
+      color: $bg-color;
+    }
+  }
+}
+.list-card {
+  // .list-card__item
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
   }
 }
