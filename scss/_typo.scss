@@ -22,7 +22,7 @@
     font-weight: 600;
     line-height: 1.55;
   } @else if $type == "h5" {
-    @include adaptiveValue("font-size", 18, 16);
+    font-size: 18;
     font-weight: 400;
     line-height: 1.55;
   } @else if $type == "h6" {

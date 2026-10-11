@@ -128,17 +128,14 @@ handleMediaChange(mediaQuery);
 function InitSwiper() {
   const swiper = new Swiper(".mySwiper", {
     loop: true,
-    // initialSlide: 1,
     spaceBetween: 10,
-    slidesPerView: "4",
-    freeMode: false,
+    slidesPerView: 5,
+    freeMode: true,
     watchSlidesProgress: true,
-    // slideToClickedSlide: true,
-    centeredSlides: true,
   });
   const swiper2 = new Swiper(".mySwiper2", {
     loop: true,
-    // initialSlide: 1,
+    spaceBetween: 10,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -147,5 +144,46 @@ function InitSwiper() {
       swiper: swiper,
     },
   });
+
+  const swiperResponse = new Swiper(".mySwiper3", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 45,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 }
 InitSwiper();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq__item");
+
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector(".faq__question");
+
+    questionBtn.addEventListener("click", () => {
+      const isActive = item.classList.contains("faq__item--active");
+
+      // Якщо потрібно, щоб при відкритті одного інші закривалися:
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("faq__item--active");
+          const btn = otherItem.querySelector(".faq__question");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Перемикаємо поточний пункт
+      item.classList.toggle("faq__item--active");
+      questionBtn.setAttribute("aria-expanded", !isActive);
+    });
+  });
+});

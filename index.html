@@ -80,7 +80,7 @@
                   <div class="hero__media media-hero">
                      <div class="media-hero__wraper">
                         <figure class="media-hero__picture">
-                           <img class="media-hero__img" src="img/hero/01.webp" alt>
+                           <img class="media-hero__img" fetchpriority=high src="img/hero/01.webp" alt>
                            <figcaption class="media-hero__info info-media">
                               <span class="info-media__pencils">Графітні олівці Koh-i-Noor Hardtmuth</span>
                               <span class="info-media__paper">А3 / Fabriano Paper</span>
@@ -381,8 +381,7 @@
                      <div class="cost__subtitle subtitle">Вартість</div>
                      <h2 class="cost__title title">Формати та ціни</h2>
                      <div class="cost__text">
-                        <p>У вартість кожного портрета вже входить преміум-папір, фіксація лаком та подарункове
-                           пакування.</p>
+                        <p>Зазначено базові ціни за 1–2 особи. Для групових або сімейних портретів (від 3 осіб) вартість розраховується індивідуально.</p>
                      </div>
 
                      <div class="cost__cards">
@@ -457,26 +456,133 @@
                            <a href="#" class="item-card__btn">Замовити</a>
                         </article>
                      </div>
+
                   </div>
                </section>
-            </main>
 
-            <footer class="footer">
-               <div class="footer__container">
-                  <div class="footer__logo logo-footer">
-                     <a href="#" class="logo-footer__link">SELIFONOVA_ART</a>
-                     <span>Авторські портрети олівцем на замовлення</span>
-                     <nav>
+               <section class="pages__reviews reviews reviews--padding reviews--border-top">
+                  <div class="reviews__container">
+                     <div class="reviews__subtitle subtitle">Відгуки</div>
+                     <h2 class="reviews__title title">Що кажуть замовники</h2>
+
+                     <div class="swiper mySwiper3 reviews__swiper">
+                        <div class="reviews__swiper-wrapper swiper-wrapper">
+                           <div class="reviews__swiper-slide swiper-slide"><img src="img/rev/01.jpg" alt></div>
+                           <div class="reviews__swiper-slide swiper-slide"><img src="img/rev/02.jpg" alt></div>
+                           <div class="reviews__swiper-slide swiper-slide"><img src="img/rev/03.jpg" alt></div>
+                           <div class="reviews__swiper-slide swiper-slide"><img src="img/rev/04.jpg" alt></div>
+                           <div class="reviews__swiper-slide swiper-slide"><img src="img/rev/05.jpg" alt></div>
+
+                        </div>
+                        <div class="__next swiper-button-next"></div>
+                        <div class="__prev swiper-button-prev"></div>
+                        <div class="reviews__pagination swiper-pagination"></div>
                      </div>
-                     <div class="footer__info">
-                        © 2026 Всі права захищено. Створено з любов'ю до графічного мистецтва.
+                  </div>
+               </section>
+
+               <section class="pages__faq faq faq--border-top faq--padding">
+                  <div class="faq__container">
+                     <div class="faq__subtitle subtitle">Запитання</div>
+                     <h2 class="faq__title title">Часті запитання</h2>
+
+                     <div class="faq__list">
+
+                        <!-- FAQ Item 1 -->
+                        <div class="faq__item">
+                           <details class="faq-item">
+                              <summary class="faq-question">Як оформити замовлення?</summary>
+                              <div class="faq-answer">
+                                 <p>Ви можете оформити замовлення через кошик на сайті або зателефонувати нашим менеджерам.</p>
+                              </div>
+                           </details>
+
+                           <details class="faq-item">
+                              <summary class="faq-question">Які є способи оплати?</summary>
+                              <div class="faq-answer">
+                                 <p>Ми приймаємо банківські картки (Visa, MasterCard), перекази та післяплату.</p>
+                              </div>
+                           </details>
+
+                           <details class="faq-item">
+                              <summary class="faq-question">Скільки триває доставка?</summary>
+                              <div class="faq-answer">
+                                 <p>Доставка зазвичай займає від 1 до 3 робочих днів залежно від вашого регіону.</p>
+                              </div>
+                           </details>
+                        </div>
+
                      </div>
 
                   </div>
-               </footer>
+               </section>
 
-               <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-               <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
-               <script src="js/script.js"></script>
-            </body>
-         </html>
+               <section class="pages__order order order--border-top order--padding">
+                  <div class="order__container">
+                     <div class="order__info info-order">
+                        <div class="info-order__subtitle subtitle">Замовлення</div>
+                        <h2 class="info-order__title title">Готові перетворити
+                           фото на малюнок?</h2>
+                        <div class="info-order__text">
+                           <p>Заповніть коротку форму, або
+                              зв'яжіться зі мною у зручному для вас месенджері для
+                              швидкої консультації.</p>
+                        </div>
+
+                        <div class="info-order__footer footer-order">
+                           <div class="footer-order__title">Прямий зв'язок у месенджерах:</div>
+                           <ul class="footer-order__list">
+                              <li class="footer-order__item"><a class="footer-order__link footer-order__link--telegram" href="#">Telegram</a></li>
+                              <li class="footer-order__item"><a class="footer-order__link footer-order__link--instagram" href="#">Instagram</a></li>
+                              <li class="footer-order__item"><a class="footer-order__link footer-order__link--whatsapp" href="#">WhatsApp</a></li>
+                           </ul>
+
+                           <div class="footer-order__delivery footer-delivery">
+                              <div class="footer-delivery__img footer-delivery__img--icon-done">
+                              </div>
+                              <div class="footer-delivery__info">Доставка по всій Україні</div>
+
+                           </img>
+                        </div>
+
+                     </div>
+
+                  </div>
+
+                  <form action="#" class="order__form form">
+                     <h3 class="form__title">Форма замовлення</h3>
+
+                     <div class="form__name">
+                        <label class="form__label" for="name">Ваше ім'я</label>
+                        <input class="form__input" required placeholder="Наприклад, Олена" id="name" type="text">
+                     </div>
+                     <div class="form__tell">
+                        <label class="form__label" for="tell">Телефон або Telegram / Viber</label>
+                        <input class="form__input" required placeholder="+380 97 000 00 00 або @username" id="tell" type="text">
+                     </div>
+
+                     <button class="form__btn" type="submit">Надіслати заявку</button>
+                  </form>
+               </div>
+            </section>
+         </main>
+
+         <footer class="footer">
+            <div class="footer__container">
+               <div class="footer__logo logo-footer">
+                  <a href="#" class="logo-footer__link">SELIFONOVA_ART</a>
+                  <span>Авторські портрети олівцем на замовлення</span>
+                  <nav>
+                  </div>
+                  <div class="footer__info">
+                     © 2026 Всі права захищено. Створено з любов'ю до графічного мистецтва.
+                  </div>
+
+               </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+            <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+            <script src="js/script.js"></script>
+         </body>
+      </html>
