@@ -23,17 +23,18 @@
          <header class="header">
             <div class="header__container">
 
-               <div class="header__logo logo"><a href="#" class="logo__link">SELIFONOVA_ART</a></div>
+               <div class="header__logo logo"><a href="#hero" class="logo__link">SELIFONOVA_ART</a></div>
                <nav class="header__nav nav-header">
                   <ul class="nav-header__list list-nav">
-                     <li class="list-nav__item"><a class="list-nav__link" href="#about-me">Про мене</a></li>
                      <li class="list-nav__item"><a class="list-nav__link" href="#gallery">Галерея</a></li>
+                     <li class="list-nav__item"><a class="list-nav__link" href="#about-me">Про мене</a></li>
+
                      <li class="list-nav__item"><a class="list-nav__link" href="#prise">Ціни</a></li>
-                     <li class="list-nav__item"><a class="list-nav__link" href="#">FAQ</a></li>
+                     <li class="list-nav__item"><a class="list-nav__link" href="#faq">FAQ</a></li>
                   </ul>
                </nav>
                <div class="header__action header-btn">
-                  <a href="#" class="header-btn__link">Замовити портрет</a>
+                  <a href="#form" class="header-btn__link">Замовити портрет</a>
                   <button class="header-btn__mobile"><span></span></button>
                </div>
 
@@ -41,7 +42,7 @@
          </header>
 
          <main class="pages">
-            <section class="pages__hero hero">
+            <section id="hero" class="pages__hero hero">
                <div class="hero__container">
                   <div class="hero__body body-hero">
                      <h1 class="body-hero__title">Живі емоції,
@@ -54,8 +55,8 @@
                      </div>
 
                      <div class="body-hero__actions actions-hero">
-                        <a href="#" class="actions-hero__link actions-hero__link--active">Замовити портрет</a>
-                        <a href="#" class="actions-hero__link actions-hero__link--icon-shevron">Переглянути галерею</a>
+                        <a href="#form" class="actions-hero__link actions-hero__link--active">Замовити портрет</a>
+                        <a href="#gallery" class="actions-hero__link actions-hero__link--icon-shevron">Переглянути галерею</a>
                      </div>
 
                      <div class="body-hero__info hero-info">
@@ -91,23 +92,68 @@
                   </div>
                </div>
             </section>
+
             <section class="pages__comparison comparison comparison--padding comparison--border-top">
                <div class="comparison__container">
-                  <div class="comparison__subtitle subtitle">Магія перетворення</div>
-                  <h2 class="comparison__title title">Від фотографії до художнього
-                     портрета</h2>
-                  <div class="comparison__text">
-                     <p>Потягніть слайдер убік, щоб порівняти цифрове фото та готовий малюнок графітним
-                        олівцем на папері.</p>
+
+                  <div class="comparison__subtitle subtitle">
+                     Магія перетворення
                   </div>
 
+                  <h2 class="comparison__title title">
+                     Від фотографії до художнього портрета
+                  </h2>
+
+                  <div class="comparison__text">
+                     <p>
+                        Потягніть слайдер убік, щоб порівняти цифрове фото та готовий малюнок графітним
+                        олівцем на папері.
+                     </p>
+                  </div>
+
+                  <!-- Before / After -->
                   <div class="comparison__slider-wrapper">
                      <div class="comparison__slider" id="image-compare">
-                        <!-- Вихідне фото -->
 
-                        <img src="img/comparsion/2.webp" alt="Вихідне фото" />
+                        <!-- BEFORE: вихідне фото -->
+                        <img
+                           class="comparison__image comparison__image--before"
+                           src="img/comparsion/2.webp"
+                           alt="Вихідне цифрове фото"
+                           draggable="false" />
 
-                        <img src="img/comparsion/1.webp" alt="Готовий портрет" />
+                        <!-- AFTER: готовий портрет -->
+                        <div class="comparison__after">
+                           <img
+                              class="comparison__image comparison__image--after"
+                              src="img/comparsion/1.webp"
+                              alt="Готовий портрет графітним олівцем"
+                              draggable="false" />
+                        </div>
+
+                        <!-- Підписи -->
+                        <span class="comparison__label comparison__label--before">
+                           ДО
+                        </span>
+
+                        <span class="comparison__label comparison__label--after">
+                           ПІСЛЯ
+                        </span>
+
+                        <!-- Розділювач -->
+                        <div class="comparison__handle" aria-hidden="true">
+                           <span class="comparison__arrow comparison__arrow--left"></span>
+                           <span class="comparison__arrow comparison__arrow--right"></span>
+                        </div>
+
+                        <!-- Керування слайдером -->
+                        <input
+                           class="comparison__range"
+                           type="range"
+                           min="0"
+                           max="100"
+                           value="50"
+                           aria-label="Порівняти фото до та після перетворення" />
 
                      </div>
                   </div>
@@ -405,7 +451,7 @@
                                  <li class="list-card__item list-card__item--icon-done">Подарункова упаковка </li>
                               </ul>
                            </div>
-                           <a href="#" class="item-card__btn">Замовити</a>
+                           <a href="#form" class="item-card__btn">Замовити</a>
                         </article>
 
                         <article class="cost__card item-card  item-card--the-best">
@@ -429,7 +475,7 @@
                                  <li class="list-card__item list-card__item--icon-done">Подарункова упаковка + фіксаж</li>
                               </ul>
                            </div>
-                           <a href="#" class="item-card__btn item-card__btn--the-best">Замовити</a>
+                           <a href="#form" class="item-card__btn item-card__btn--the-best">Замовити</a>
                         </article>
 
                         <article class="cost__card item-card">
@@ -453,7 +499,7 @@
                                  <li class="list-card__item list-card__item--icon-done">Безпечний поштовий тубус</li>
                               </ul>
                            </div>
-                           <a href="#" class="item-card__btn">Замовити</a>
+                           <a href="#form" class="item-card__btn">Замовити</a>
                         </article>
                      </div>
 
@@ -481,7 +527,7 @@
                   </div>
                </section>
 
-               <section class="pages__faq faq faq--border-top faq--padding">
+               <section id="faq" class="pages__faq faq faq--border-top faq--padding">
                   <div class="faq__container">
                      <div class="faq__subtitle subtitle">Запитання</div>
                      <h2 class="faq__title title">Часті запитання</h2>
@@ -549,7 +595,7 @@
 
                   </div>
 
-                  <form action="#" class="order__form form">
+                  <form action="#" id="form" class="order__form form">
                      <h3 class="form__title">Форма замовлення</h3>
 
                      <div class="form__name">

@@ -50,31 +50,20 @@ function load() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const element = document.getElementById("image-compare");
+document.querySelectorAll(".comparison__slider-wrapper").forEach((wrapper) => {
+  const slider = wrapper.querySelector(".comparison__slider");
+  const range = wrapper.querySelector(".comparison__range");
 
-  if (element) {
-    const viewer = new ImageCompare(element, {
-      controlColor: "#FFFFFF",
-      controlShadow: true,
-      addCircle: true,
-      addCircleBlur: false,
-      hoverStart: false,
-      showLabels: true,
-      smoothing: false,
-      fluid: true,
-      labelOptions: {
-        before: "ВИХІДНЕ ФОТО",
-        after: "ГОТОВИЙ ПОРТРЕТ (ОЛІВЕЦЬ)",
-        onHover: false,
-      },
+  if (!slider || !range) return;
 
-      startingPoint: 50,
-      smoothingAmount: 80,
-    });
-
-    viewer.mount();
+  function updateSlider() {
+    slider.style.setProperty("--position", `${range.value}%`);
   }
+
+  range.addEventListener("input", updateSlider);
+  range.addEventListener("change", updateSlider);
+
+  updateSlider();
 });
 
 // const card = document.querySelector(".hero__media");

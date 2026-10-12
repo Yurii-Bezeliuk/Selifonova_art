@@ -4,12 +4,14 @@
 @use "_colors" as *;
 
 .header {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   background-color: $bg-color;
   z-index: 20;
+  // // padding-inline: toRem(35);
+  // margin-inline: toRem(-15);
 
   &::after {
     content: "";
