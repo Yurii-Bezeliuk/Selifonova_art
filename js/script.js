@@ -39,12 +39,20 @@ function load() {
 
   addTouchAttr();
   document.addEventListener("click", documentActions);
+
   function documentActions(e) {
     const targetElement = e.target;
+
     if (isMobile.any()) {
+      // 1. Якщо клікнули на кнопку відкриття/закриття меню
       if (targetElement.closest(".header-btn__mobile")) {
-        // Додаємо атрибут всьому документу
         document.documentElement.toggleAttribute("data-menu-open");
+      }
+
+      // 2. ДОДАЄМО ЦЕЙ БЛОК: якщо клікнули на посилання ВСЕРЕДИНІ меню
+      // (замініть .mobile-menu на клас вашого блоку меню)
+      if (targetElement.closest(".mobile-menu a")) {
+        document.documentElement.removeAttribute("data-menu-open");
       }
     }
   }
