@@ -430,8 +430,8 @@ html:not([data-fls-touch]) .header-btn__link:hover:hover {
   line-height: 1.35;
 }
 
-body {
-  overflow-y: scroll;
+html {
+  scroll-behavior: smooth;
 }
 
 @media (18.75em <= width <= 37.5rem) and (min-width: 81.875em) {
@@ -931,23 +931,26 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
 }
 .comparison__label {
   position: absolute;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
   z-index: 2;
   top: 1rem;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.0625rem;
+  border-radius: 624.9375rem;
   pointer-events: none;
+  text-transform: uppercase;
 }
 .comparison__label--before {
   left: 1rem;
+  background-color: #ffffff;
+  color: #151413;
 }
 .comparison__label--after {
   right: 1rem;
+  background-color: #151413;
+  color: #f8f7f5;
 }
 .comparison__handle {
   position: absolute;
@@ -1028,8 +1031,9 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
 }
 .swiper-gallery {
   width: 100%;
-  max-width: 56.25rem;
-  aspect-ratio: 900/700;
+  max-width: 60rem;
+  aspect-ratio: 960/700;
+  padding-inline: 3.75rem;
   margin: 0 auto 0.625rem;
 }
 .swiper-gallery__slide {
@@ -1074,6 +1078,14 @@ html:not([data-fls-touch]) .media-hero__picture:hover {
 .swiper-button-next,
 .swiper-button-prev {
   color: #151413;
+  width: 3.125rem;
+  height: 3.125rem;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
+html:not([data-fls-touch]) .swiper-button-next:hover,
+html:not([data-fls-touch]) .swiper-button-prev:hover {
+  width: 3.4375rem;
 }
 
 @media (min-width: 81.875em) {
@@ -2140,13 +2152,13 @@ html:not([data-fls-touch]) .item-card__btn:hover {
   }
 }
 .reviews__swiper {
-  max-width: 37.5rem;
+  position: relative;
+  max-width: 43.75rem;
   margin: 0 auto;
-  padding: 1.875rem 2.8125rem;
+  padding: 1.875rem 6.25rem;
 }
 .reviews__swiper-slide {
-  max-width: 37.5rem;
-  aspect-ratio: 1;
+  max-width: 43.75rem;
 }
 .reviews__swiper-slide img {
   width: 100%;
@@ -2160,9 +2172,12 @@ html:not([data-fls-touch]) .item-card__btn:hover {
   background-color: #151413;
 }
 .reviews__next, .reviews__prev {
+  translate: 0% -50%;
   width: 3.125rem;
   height: 3.125rem;
   color: #856e52;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 html:not([data-fls-touch]) .reviews__next:hover, html:not([data-fls-touch]) .reviews__prev:hover {
   width: 3.75rem;
@@ -2585,6 +2600,8 @@ details[open] .faq-question::after {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 html:not([data-fls-touch]) .form__btn:hover {
   background-color: #a38b6d;

@@ -5,8 +5,11 @@
 @use "_components.scss" as *;
 
 // html,
+html {
+  scroll-behavior: smooth;
+}
 body {
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 main {
@@ -419,24 +422,24 @@ main {
   // .comparison__label
   &__label {
     position: absolute;
+    @include typo("p");
     z-index: 2;
     top: toRem(16);
     padding: toRem(8) toRem(12);
-    border-radius: toRem(4);
-    background-color: rgba(0, 0, 0, 0.65);
-    color: #fff;
-    font-size: toRem(12);
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: toRem(1);
+    border-radius: toRem(9999);
     pointer-events: none;
+    text-transform: uppercase;
 
     &--before {
       left: toRem(16);
+      background-color: $bg-card;
+      color: $color;
     }
 
     &--after {
       right: toRem(16);
+      background-color: $color;
+      color: $bg-color;
     }
   }
 
@@ -510,12 +513,6 @@ main {
 
 // ---------------------------------
 
-.pages {
-  // .pages__gallery
-
-  &__gallery {
-  }
-}
 .gallery {
   // .gallery__container
 
@@ -546,8 +543,9 @@ main {
 }
 .swiper-gallery {
   width: 100%;
-  max-width: toRem(900);
-  aspect-ratio: 900 / 700;
+  max-width: toRem(960);
+  aspect-ratio: 960 / 700;
+  padding-inline: toRem(60);
   margin: 0 auto toRem(10);
 
   &__slide {
@@ -595,6 +593,14 @@ main {
 .swiper-button-next,
 .swiper-button-prev {
   color: $color;
+  width: toRem(50);
+  height: toRem(50);
+  transition: width 0.2s;
+  html:not([data-fls-touch]) & {
+    &:hover {
+      width: toRem(55);
+    }
+  }
 }
 
 // --------------------------
@@ -1332,9 +1338,10 @@ main {
 
   &__swiper {
     // background-color: $hover-light;
-    max-width: toRem(600);
+    position: relative;
+    max-width: toRem(700);
     margin: 0 auto;
-    padding: toRem(30) toRem(45);
+    padding: toRem(30) toRem(100);
   }
 
   // .reviews__swiper-wrapper
@@ -1345,8 +1352,8 @@ main {
   // .reviews__swiper-slide
 
   &__swiper-slide {
-    max-width: toRem(600);
-    aspect-ratio: 1;
+    max-width: toRem(700);
+    // aspect-ratio: 1;
 
     img {
       width: 100%;
@@ -1362,9 +1369,11 @@ main {
   }
   &__next,
   &__prev {
+    translate: 0% -50%;
     width: toRem(50);
     height: toRem(50);
     color: $hover-dark;
+    transition: all 0.2s;
     html:not([data-fls-touch]) & {
       &:hover {
         width: toRem(60);
@@ -1373,6 +1382,9 @@ main {
     }
   }
 }
+// .swiper-button-next,
+// .swiper-button-prev {
+// }
 
 // .swiper {
 // }
@@ -1699,6 +1711,7 @@ details[open] .faq-question::after {
     color: $bg-card;
     text-transform: uppercase;
     @include typo("p");
+    transition: background-color 0.3s;
     html:not([data-fls-touch]) & {
       &:hover {
         background-color: $hover-color;

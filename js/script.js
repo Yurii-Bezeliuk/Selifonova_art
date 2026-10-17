@@ -66,25 +66,6 @@ document.querySelectorAll(".comparison__slider-wrapper").forEach((wrapper) => {
   updateSlider();
 });
 
-// const card = document.querySelector(".hero__media");
-// const mainContent = document.querySelector(".body-hero__text");
-// const originalParent = document.querySelector(".body-hero");
-
-// function handleResize() {
-//   if (window.innerWidth <= 992) {
-//     // Якщо екран менше 991px — переміщуємо картку всередину текстового блоку
-//     mainContent.after(card);
-//   } else {
-//     // Повертаємо картку назад на десктопі
-//     originalParent.after(card);
-//   }
-// }
-
-// // Слухаємо зміну розміру екрана
-// window.addEventListener("resize", handleResize);
-// // Викликаємо одразу при завантаженні
-// handleResize();
-
 const card = document.querySelector(".hero__media");
 const mainContent = document.querySelector(".body-hero__text");
 const originalParent = document.querySelector(".body-hero");
@@ -124,7 +105,7 @@ function InitSwiper() {
   });
   const swiper2 = new Swiper(".mySwiper2", {
     loop: true,
-    spaceBetween: 10,
+    spaceBetween: 100,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -135,10 +116,10 @@ function InitSwiper() {
   });
 
   const swiperResponse = new Swiper(".mySwiper3", {
+    autoHeight: true,
     loop: true,
     slidesPerView: 1,
-    spaceBetween: 45,
-    loop: true,
+    spaceBetween: 101,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
