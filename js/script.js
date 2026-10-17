@@ -44,14 +44,14 @@ function load() {
     const targetElement = e.target;
 
     if (isMobile.any()) {
-      // 1. Якщо клікнули на кнопку відкриття/закриття меню
+      // 1. Клік на кнопку відкриття/закриття меню
       if (targetElement.closest(".header-btn__mobile")) {
         document.documentElement.toggleAttribute("data-menu-open");
       }
 
-      // 2. ДОДАЄМО ЦЕЙ БЛОК: якщо клікнули на посилання ВСЕРЕДИНІ меню
-      // (замініть .mobile-menu на клас вашого блоку меню)
-      if (targetElement.closest(".mobile-menu a")) {
+      // 2. Клік на будь-яке посилання-якір ВСЕРЕДИНІ мобільного меню
+      // Замініть ".menu" на реальний клас вашого блоку навігації/меню
+      if (targetElement.closest(".menu") && targetElement.closest("a")) {
         document.documentElement.removeAttribute("data-menu-open");
       }
     }
