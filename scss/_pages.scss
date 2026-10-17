@@ -1612,14 +1612,28 @@ details[open] .faq-question::after {
     text-transform: uppercase;
     @include typo("p");
     font-weight: 600;
+    html:not([data-fls-touch]) & {
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
     &--telegram {
       background-color: #229ed9;
     }
     &--instagram {
       background-color: #e1306c;
+      html:not([data-fls-touch]) & {
+        &:hover {
+          background-color: $hover-color;
+        }
+      }
     }
     &--whatsapp {
       background-color: #25d366;
+    }
+    html:not([data-fls-touch]) & {
+      &:hover {
+      }
     }
   }
 

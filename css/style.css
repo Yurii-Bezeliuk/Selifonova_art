@@ -2467,11 +2467,17 @@ details[open] .faq-question::after {
   line-height: 1.5;
   font-weight: 600;
 }
+html:not([data-fls-touch]) .footer-order__link:hover {
+  background-color: #a38b6d;
+}
 .footer-order__link--telegram {
   background-color: #229ed9;
 }
 .footer-order__link--instagram {
   background-color: #e1306c;
+}
+html:not([data-fls-touch]) .footer-order__link--instagram:hover {
+  background-color: #a38b6d;
 }
 .footer-order__link--whatsapp {
   background-color: #25d366;

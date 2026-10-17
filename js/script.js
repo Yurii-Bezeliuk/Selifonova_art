@@ -44,14 +44,11 @@ function load() {
     const targetElement = e.target;
 
     if (isMobile.any()) {
-      // 1. Клік на кнопку відкриття/закриття меню
+      // 1. Якщо клікнули на кнопку відкриття/закриття меню
       if (targetElement.closest(".header-btn__mobile")) {
         document.documentElement.toggleAttribute("data-menu-open");
       }
-
-      // 2. Клік на будь-яке посилання-якір ВСЕРЕДИНІ мобільного меню
-      // Замініть ".menu" на реальний клас вашого блоку навігації/меню
-      if (targetElement.closest(".menu") && targetElement.closest("a")) {
+      if (targetElement.closest(".list-nav__link")) {
         document.documentElement.removeAttribute("data-menu-open");
       }
     }
@@ -142,26 +139,27 @@ function InitSwiper() {
 InitSwiper();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const faqItems = document.querySelectorAll(".faq__item");
+  // Вішаємо один слухач на весь документ (або на контейнер FAQ)
+  document.addEventListener("click", (e) => {
+    const questionBtn = e.target.closest(".faq_question");
+    if (!questionBtn) return; // Якщо клікнули не на питання — нічого не робимо
 
-  faqItems.forEach((item) => {
-    const questionBtn = item.querySelector(".faq__question");
+    const item = questionBtn.closest(".faq_item");
+    if (!item) return;
 
-    questionBtn.addEventListener("click", () => {
-      const isActive = item.classList.contains("faq__item--active");
+    const isActive = item.classList.contains("faq_item--active");
 
-      // Якщо потрібно, щоб при відкритті одного інші закривалися:
-      faqItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("faq__item--active");
-          const btn = otherItem.querySelector(".faq__question");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      // Перемикаємо поточний пункт
-      item.classList.toggle("faq__item--active");
-      questionBtn.setAttribute("aria-expanded", !isActive);
+    // Закриваємо всі інші елементи
+    document.querySelectorAll(".faq_item").forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove("faq_item--active");
+        const btn = otherItem.querySelector(".faq_question");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      }
     });
+
+    // Перемикаємо поточний
+    item.classList.toggle("faq_item--active");
+    questionBtn.setAttribute("aria-expanded", !isActive);
   });
 });
