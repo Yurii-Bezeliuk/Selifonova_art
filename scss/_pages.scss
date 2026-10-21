@@ -1341,7 +1341,7 @@ main {
     position: relative;
     max-width: toRem(700);
     margin: 0 auto;
-    padding: toRem(30) toRem(100);
+    padding: toRem(40) toRem(100);
   }
 
   // .reviews__swiper-wrapper
@@ -1382,6 +1382,12 @@ main {
     }
   }
 }
+.swiper-pagination-bullet {
+  width: toRem(16);
+  height: toRem(16);
+  border-radius: toRem(12);
+}
+
 // .swiper-button-next,
 // .swiper-button-prev {
 // }

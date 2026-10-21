@@ -284,7 +284,7 @@ input[type=radio] {
   translate: -50%;
   width: 0;
   height: 0.125rem;
-  background-color: #a38b6d;
+  background-color: #926a35;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -422,7 +422,7 @@ html:not([data-fls-touch]) .header-btn__link:hover:hover {
 }
 
 .subtitle {
-  color: #a38b6d;
+  color: #926a35;
   text-transform: uppercase;
   font-size: 14px;
   font-family: "Inter", sans-serif;
@@ -694,7 +694,7 @@ html:not([data-fls-touch]) .actions-hero__link:hover::before {
   color: #f8f7f5;
 }
 html:not([data-fls-touch]) .actions-hero__link--active:hover {
-  background-color: #a38b6d;
+  background-color: #926a35;
 }
 
 .hero-info {
@@ -1819,7 +1819,7 @@ html:not([data-fls-touch]) .swiper-button-prev:hover {
   font-weight: 300;
   line-height: 1.111;
   font-family: "Cormorant Garamond", serif;
-  color: #a38b6d;
+  color: #926a35;
 }
 .items-stages__title {
   font-size: 1.375rem;
@@ -2009,7 +2009,7 @@ html:not([data-fls-touch]) .swiper-button-prev:hover {
   }
 }
 .item-card__subtitle--the-best {
-  color: #a38b6d;
+  color: #926a35;
 }
 .item-card__cost {
   border-top: 0.0625rem solid #e2e0d8;
@@ -2155,7 +2155,7 @@ html:not([data-fls-touch]) .item-card__btn:hover {
   position: relative;
   max-width: 43.75rem;
   margin: 0 auto;
-  padding: 1.875rem 6.25rem;
+  padding: 2.5rem 6.25rem;
 }
 .reviews__swiper-slide {
   max-width: 43.75rem;
@@ -2182,6 +2182,12 @@ html:not([data-fls-touch]) .item-card__btn:hover {
 html:not([data-fls-touch]) .reviews__next:hover, html:not([data-fls-touch]) .reviews__prev:hover {
   width: 3.75rem;
   aspect-ratio: 1;
+}
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.75rem;
 }
 
 .faq__container {
@@ -2468,7 +2474,7 @@ details[open] .faq-question::after {
   font-weight: 600;
 }
 html:not([data-fls-touch]) .footer-order__link:hover {
-  background-color: #a38b6d;
+  background-color: #926a35;
 }
 .footer-order__link--telegram {
   background-color: #229ed9;
@@ -2477,7 +2483,7 @@ html:not([data-fls-touch]) .footer-order__link:hover {
   background-color: #e1306c;
 }
 html:not([data-fls-touch]) .footer-order__link--instagram:hover {
-  background-color: #a38b6d;
+  background-color: #926a35;
 }
 .footer-order__link--whatsapp {
   background-color: #25d366;
@@ -2610,7 +2616,7 @@ html:not([data-fls-touch]) .footer-order__link--instagram:hover {
   transition: background-color 0.3s;
 }
 html:not([data-fls-touch]) .form__btn:hover {
-  background-color: #a38b6d;
+  background-color: #926a35;
 }
 
 .footer {
