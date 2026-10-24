@@ -140,12 +140,11 @@ function load() {
   document.addEventListener("click", (e) => {
     const button = e.target.closest(".btn");
     const clickedInsideForm = e.target.closest(".form"); // чи клікнули всередину форми
-    const linkBtn = e.target.closest(".list-nav__link");
     const formActive = document.querySelector(".form");
     const inputActive = document.querySelector(".form__input");
 
     if (button || clickedInsideForm) {
-      if (button || linkBtn) {
+      if (button) {
         e.preventDefault(); // зупиняємо стандартний перехід посиланню, якщо це <a>
       }
 
