@@ -665,6 +665,7 @@ main {
     height: 100%;
     object-fit: cover;
     border-radius: toRem(16);
+
     @media (width<=toEm(991)) {
       height: 100%;
       width: 100%;
@@ -1742,9 +1743,5 @@ details[open] .faq-question::after {
         background-color: $hover-color;
       }
     }
-  }
-}
-.form__input--active {
-  &:focus {
   }
 }
