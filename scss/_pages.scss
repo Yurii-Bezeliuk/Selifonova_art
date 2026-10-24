@@ -1383,8 +1383,8 @@ main {
   }
 }
 .swiper-pagination-bullet {
-  width: toRem(16);
-  height: toRem(16);
+  width: toRem(15);
+  height: toRem(15);
   border-radius: toRem(12);
 }
 
@@ -1664,6 +1664,9 @@ details[open] .faq-question::after {
     aspect-ratio: 1;
     background-color: $bg-color;
     border-radius: 50%;
+    &--icon-truck {
+      font-size: toRem(20);
+    }
   }
 
   &__info {
@@ -1674,7 +1677,9 @@ details[open] .faq-question::after {
 
 .form {
   // .form__title
-
+  &--active {
+    box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.3);
+  }
   &__title {
     @include typo("h3");
     font-weight: 600;
@@ -1737,5 +1742,9 @@ details[open] .faq-question::after {
         background-color: $hover-color;
       }
     }
+  }
+}
+.form__input--active {
+  &:focus {
   }
 }

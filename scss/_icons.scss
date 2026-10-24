@@ -16,36 +16,58 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-[class*="--icon-bookmark"]::before {
-  content: "\e900";
-}
-[class*="--icon-done"]::before {
+[class*="--icon-facebook"]::before {
   content: "\e901";
 }
-[class*="--icon-done-medium"]::before {
-  content: "\e902";
-}
-[class*="--icon-facebook"]::before {
-  content: "\e904";
-}
 [class*="--icon-instagram"]::before {
-  content: "\e905";
-}
-[class*="--icon-save"]::before {
-  content: "\e906";
-}
-[class*="--icon-star"]::before {
-  content: "\e907";
-}
-[class*="--icon-twiter"]::before {
-  content: "\e908";
-}
-[class*="--icon-logo"]::before {
-  content: "\e909";
+  content: "\e904";
 }
 [class*="--icon-shevron"]::before {
   content: "\e90b";
 }
+[class*="--icon-truck"]::before {
+  content: "\e9b0";
+}
+[class*="--icon-bad"]::before {
+  content: "\ea0f";
+}
+[class*="--icon-done"]::before {
+  content: "\ea10";
+}
+[class*="--icon-telegram"]::before {
+  content: "\ea95";
+}
+
+// [class*="--icon-bookmark"]::before {
+//   content: "\e900";
+// }
+// [class*="--icon-done"]::before {
+//   content: "\e901";
+// }
+// [class*="--icon-done-medium"]::before {
+//   content: "\e902";
+// }
+// [class*="--icon-facebook"]::before {
+//   content: "\e904";
+// }
+// [class*="--icon-instagram"]::before {
+//   content: "\e905";
+// }
+// [class*="--icon-save"]::before {
+//   content: "\e906";
+// }
+// [class*="--icon-star"]::before {
+//   content: "\e907";
+// }
+// [class*="--icon-twiter"]::before {
+//   content: "\e908";
+// }
+// [class*="--icon-logo"]::before {
+//   content: "\e909";
+// }
+// [class*="--icon-shevron"]::before {
+//   content: "\e90b";
+// }
 
 // [class*="--icon-card"]:before {
 //    content: "\e902";
